@@ -46,6 +46,7 @@ ERL_NIF_API_FUNC_DECL(int,enif_get_list_cell,(ErlNifEnv* env, ERL_NIF_TERM term,
 ERL_NIF_API_FUNC_DECL(int,enif_get_tuple,(ErlNifEnv* env, ERL_NIF_TERM tpl, int* arity, const ERL_NIF_TERM** array));
 ERL_NIF_API_FUNC_DECL(int,enif_is_identical,(ERL_NIF_TERM lhs, ERL_NIF_TERM rhs));
 ERL_NIF_API_FUNC_DECL(int,enif_compare,(ERL_NIF_TERM lhs, ERL_NIF_TERM rhs));
+ERL_NIF_API_FUNC_DECL(unsigned int,enif_phash2,(ERL_NIF_TERM term));
 ERL_NIF_API_FUNC_DECL(ERL_NIF_TERM,enif_make_binary,(ErlNifEnv* env, ErlNifBinary* bin));
 ERL_NIF_API_FUNC_DECL(ERL_NIF_TERM,enif_make_badarg,(ErlNifEnv* env));
 ERL_NIF_API_FUNC_DECL(ERL_NIF_TERM,enif_make_int,(ErlNifEnv* env, int i));
@@ -168,6 +169,7 @@ ERL_NIF_API_FUNC_DECL(void*,enif_dlsym,(void* handle, const char* symbol, void (
 #  define enif_get_list_cell ERL_NIF_API_FUNC_MACRO(enif_get_list_cell)
 #  define enif_is_identical ERL_NIF_API_FUNC_MACRO(enif_is_identical)
 #  define enif_compare ERL_NIF_API_FUNC_MACRO(enif_compare)
+#  define enif_phash2 ERL_NIF_API_FUNC_MACRO(enif_phash2)
 
 #  define enif_make_binary ERL_NIF_API_FUNC_MACRO(enif_make_binary)
 #  define enif_make_badarg ERL_NIF_API_FUNC_MACRO(enif_make_badarg)

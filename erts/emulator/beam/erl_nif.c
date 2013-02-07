@@ -624,6 +624,11 @@ int enif_compare(Eterm lhs, Eterm rhs)
     return result;
 }
 
+unsigned int enif_phash2(Eterm term)
+{
+    return (unsigned int) make_hash2(term);
+}
+
 int enif_get_tuple(ErlNifEnv* env, Eterm tpl, int* arity, const Eterm** array)
 {
     Eterm* ptr;

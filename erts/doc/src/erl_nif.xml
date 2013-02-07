@@ -556,6 +556,10 @@ typedef enum {
       operators <c>==</c>, <c>/=</c>, <c>=&lt;</c>, <c>&lt;</c>,
       <c>&gt;=</c> and <c>&gt;</c> (but <em>not</em> <c>=:=</c> or <c>=/=</c>).</p></desc>
     </func>
+    <func><name><ret>unsigned int</ret><nametext>enif_phash2(ERL_NIF_TERM term)</nametext></name>
+    <fsummary>Generate a hash from an <c>ERL_NIF_TERM</c></fsummary>
+    <desc><p>Same as <c>erlang:phash2(any(), 16#100000000)</c></p></desc>
+    </func>
     <func><name><ret>void</ret><nametext>enif_cond_broadcast(ErlNifCond *cnd)</nametext></name>
     <fsummary></fsummary>
     <desc><p>Same as <seealso marker="erl_driver#erl_drv_cond_broadcast">erl_drv_cond_broadcast</seealso>.

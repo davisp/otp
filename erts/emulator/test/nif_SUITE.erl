@@ -291,6 +291,13 @@ types(Config) when is_list(Config) ->
     ?line true = (compare(-36893488147419103232, -295147905179352825856) > 0),
     ?line true = (compare(-29514790517935282585612345678, -36893488147419103232) < 0),
     ?line true = (compare(-36893488147419103232, -29514790517935282585612345678) > 0),
+
+    Ref = erlang:make_ref(),
+    ?line true = (erlang:phash2(foo, 16#100000000) == phash2(foo)),
+    ?line true = (erlang:phash2(1.1, 16#100000000) == phash2(1.1)),
+    ?line true = (erlang:phash2({<<"e">>, []}, 16#100000000) == phash2({<<"e">>, []})),
+    ?line true = (erlang:phash2(Ref, 16#100000000) == phash2(Ref)),
+    ?line true = (erlang:phash2(self(), 16#100000000) == phash2(self())),
     ok.
 
 int_list() ->
@@ -1333,6 +1340,7 @@ type_test() -> ?nif_stub.
 tuple_2_list(_) -> ?nif_stub.    
 is_identical(_,_) -> ?nif_stub.
 compare(_,_) -> ?nif_stub.
+phash2(_) -> ?nif_stub.
 many_args_100(_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_,_) -> ?nif_stub.
 clone_bin(_) -> ?nif_stub.
 make_sub_bin(_,_,_) -> ?nif_stub.
