@@ -141,6 +141,7 @@ ERL_NIF_API_FUNC_DECL(int,enif_is_number,(ErlNifEnv*, ERL_NIF_TERM term));
 ERL_NIF_API_FUNC_DECL(void*,enif_dlopen,(const char* lib, void (*err_handler)(void*,const char*), void* err_arg));
 ERL_NIF_API_FUNC_DECL(void*,enif_dlsym,(void* handle, const char* symbol, void (*err_handler)(void*,const char*), void* err_arg));
 ERL_NIF_API_FUNC_DECL(int,enif_consume_timeslice,(ErlNifEnv*, int percent));
+ERL_NIF_API_FUNC_DECL(unsigned int,enif_phash2,(ERL_NIF_TERM term));
 
 /*
 ** Add new entries here to keep compatibility on Windows!!!
@@ -266,6 +267,7 @@ ERL_NIF_API_FUNC_DECL(int,enif_consume_timeslice,(ErlNifEnv*, int percent));
 #  define enif_dlopen ERL_NIF_API_FUNC_MACRO(enif_dlopen)
 #  define enif_dlsym ERL_NIF_API_FUNC_MACRO(enif_dlsym)
 #  define enif_consume_timeslice ERL_NIF_API_FUNC_MACRO(enif_consume_timeslice)
+#  define enif_phash2 ERL_NIF_API_FUNC_MACRO(enif_phash2)
 
 /*
 ** Add new entries here
