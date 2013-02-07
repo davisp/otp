@@ -162,8 +162,8 @@ void beam_catches_delmod(unsigned head, BeamInstr *code, unsigned code_bytes,
 	    erl_exit(1,
 		    "beam_catches_delmod: item %#x has cp %#lx which is not "
 		    "in module's range [%#lx,%#lx[\r\n",
-		    i, (long)p->beam_catches[i].cp,
-		    (long)code, (long)((char*)code + code_bytes));
+		    i, (Uint)p->beam_catches[i].cp,
+		    (Uint)code, (Uint)((char*)code + code_bytes));
 	}
 	p->beam_catches[i].cp = 0;
 	cdr = p->beam_catches[i].cdr;

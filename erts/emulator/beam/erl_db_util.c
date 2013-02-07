@@ -3416,7 +3416,7 @@ static DMCRet dmc_one_term(DMCContext *context,
     default:
 	erl_exit(1, "db_match_compile: "
 		 "Bad object on heap: 0x%08lx\n",
-		 (unsigned long) c);
+		 (Uint) c);
     }
     return retOk;
 }
@@ -4861,7 +4861,7 @@ static Eterm my_copy_struct(Eterm t, Eterm **hp, ErlOffHeap* off_heap)
 		ret = copy_struct(b,sz,hp,off_heap);
 	    } else {
 		erl_exit(1, "Trying to constant-copy non constant expression "
-			 "0x%08x in (d)ets:match compilation.", (unsigned long) t);
+			 "0x%08x in (d)ets:match compilation.", (Uint) t);
 	    }
 	} else {
 	    sz = size_object(t);
@@ -5407,7 +5407,7 @@ void db_match_dis(Binary *bp)
 	    first = 0;
 	else
 	    erts_printf(", ");
-	erts_printf("0x%08x", (unsigned long) tmp);
+	erts_printf("0x%08x", (Uint) tmp);
     }
     erts_printf("}\n");
     erts_printf("num_bindings: %d\n", prog->num_bindings);
