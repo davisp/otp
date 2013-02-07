@@ -50,6 +50,7 @@ MODULES= \
 	ssl_certificate\
 	ssl_certificate_db\
 	ssl_cipher \
+	ssl_srp_primes \
 	ssl_connection \
 	ssl_connection_sup \
 	ssl_debug \
@@ -66,7 +67,7 @@ MODULES= \
 INTERNAL_HRL_FILES = \
 	 ssl_debug.hrl \
 	 ssl_alert.hrl ssl_cipher.hrl ssl_handshake.hrl ssl_internal.hrl \
-	 ssl_record.hrl
+	 ssl_record.hrl ssl_srp.hrl ssl_srp_primes.hrl
 
 ERL_FILES= \
 	$(MODULES:%=%.erl) \
