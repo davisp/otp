@@ -122,14 +122,6 @@ main(int argc, char *argv[])
 	&& chdir(argv[CS_ARGV_WD_IX]) < 0)
 	return 1;
 
-#if defined(USE_SETPGRP_NOARGS)		/* SysV */
-    (void) setpgrp();
-#elif defined(USE_SETPGRP)		/* BSD */
-    (void) setpgrp(0, getpid());
-#else					/* POSIX */
-    (void) setsid();
-#endif
-
     sys_sigrelease(SIGCHLD);
     sys_sigrelease(SIGINT);
     sys_sigrelease(SIGUSR1);
